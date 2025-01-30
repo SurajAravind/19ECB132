@@ -94,3 +94,38 @@ int main() {
   }
     
 }
+
+//Code to be used in Python Tutor Visualization
+
+# include <stdio.h>
+# include <stdlib.h>
+
+struct singly_node{
+  int data;
+   struct singly_node *next;
+};
+
+int main() {
+  printf("\n*** Singly Linked List ***");
+  int elements[3] = {10, 20, 30};
+  struct singly_node *head = NULL, *new_node, *temp;
+  for(int i=0; i<3; i++) {
+    new_node = (struct singly_node *)malloc(sizeof(struct singly_node));
+    new_node->data = elements[i];
+    new_node->next = NULL;
+    if (head == NULL)
+      head = temp = new_node;
+    else {
+      temp->next = new_node;
+      temp = new_node;
+    }
+  } 
+
+  printf("\nThe elements in the Singly Linked list are...");
+  temp = head;
+  while (temp != NULL) {
+    printf("\n%d", temp->data);
+    temp = temp->next;
+  }
+   
+}
